@@ -1,0 +1,38 @@
+# LLM / Claude Code 配置
+
+llm:
+  # API Key（必填）
+  api_key: ""
+  
+  # API 地址（支持 Anthropic 协议兼容的提供商）
+  api_base: "https://api.anthropic.com"
+  # api_base: "https://openrouter.ai/api/v1"
+  # api_base: "https://your-proxy.com/v1"
+  
+  # 模型名称
+  model: "claude-sonnet-4-20250514"
+
+claude_code:
+  # Claude CLI 路径（如果在 PATH 中可省略）
+  cli_path: "claude"
+  
+  # 权限模式
+  # - default: 每次询问
+  # - acceptEdits: 自动允许文件编辑
+  # - bypassPermissions: 自动允许所有（危险）
+  permission_mode: "acceptEdits"
+  
+  # 工作目录（项目路径）
+  work_dir: "/root/.openclaw/workspace"
+
+streaming:
+  # 流式模式
+  # - none: 不流式，等完整响应
+  # - chunk: 块流式，每个步骤返回一次（推荐）
+  mode: "chunk"
+  
+  # 块流式间隔（秒）
+  chunk_interval: 0.5
+  
+  # 块流式最大字符数
+  chunk_max_chars: 500
